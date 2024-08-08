@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\WalletController;
+use App\Http\Controllers\TransferController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +20,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/users', [UserController::class, 'index']);
+Route::get('/users/{id}', [UserController::class, 'show']);
+Route::post('/users', [UserController::class, 'store']);
+
+Route::get('/wallets/{userId}', [WalletController::class, 'show']);
+Route::post('/wallets/{userId}/update', [WalletController::class, 'updateBalance']);
+
+Route::post('/transfers', [TransferController::class, 'transfer']);
