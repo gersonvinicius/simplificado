@@ -4,7 +4,7 @@ namespace App\Services;
 
 use App\Repositories\WalletRepository;
 
-class WalletService
+class WalletServices
 {
     protected $walletRepository;
 

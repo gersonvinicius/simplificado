@@ -7,7 +7,7 @@ use App\Repositories\WalletRepository;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
 
-class TransferService
+class TransferServices
 {
     protected $transferRepository;
     protected $walletRepository;

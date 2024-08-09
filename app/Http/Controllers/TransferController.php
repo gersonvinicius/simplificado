@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Services\TransferService;
+use App\Services\TransferServices;
 use Illuminate\Http\Request;
 
 class TransferController extends Controller
 {
     protected $transferService;
 
-    public function __construct(TransferService $transferService)
+    public function __construct(TransferServices $transferService)
     {
         $this->transferService = $transferService;
     }
