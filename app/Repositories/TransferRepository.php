@@ -9,7 +9,14 @@ class TransferRepository
 {
     public function findById($id)
     {
-        return DB::select('SELECT * FROM transfers WHERE id = ?', [$id]);
+        $result = DB::select('SELECT * FROM transfers WHERE id = ?', [$id]);
+
+        // Verifica se encontrou o registro e transforma o array em um objeto
+        if (count($result) > 0) {
+            return (object) $result[0];
+        }
+
+        return null;
     }
 
     public function create(array $data)
